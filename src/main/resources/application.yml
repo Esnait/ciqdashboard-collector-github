@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: dashboard-collector
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ciqdashboard
+#      credents: ENC(4litQ6Gs+nMxT88Dxa5hy8/peZ3m46Va/aeFy2vHw/PFqoBDhVseIETBNKgPnimJ)
+      collection: Repos
+github:
+  url: "https://api.github.com"
+  token: "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"
+scheduler:
+  cron: 0 0/1 * * * *
+  enable: true
+server:
+  port: 9090
+logging:
+  level:
+    com.cognizant.dashboard.collectors.github.clients.GitHubClient: OFF
+
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
+
+jasypt:
+  encryptor:
+    password: dndCMiFLdGR5dktqJnY0dQ==
+    bean: JasyptEncryptorBean
